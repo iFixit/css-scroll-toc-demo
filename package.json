@@ -2,15 +2,22 @@
   "name": "css-scroll-toc-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "All rights reserved",
   "devDependencies": {
     "parcel": "^2.10.3",
     "prettier": "^3.1.1"
+  },
+  "targets": {
+    "default": {
+      "publicUrl": "/css-scroll-toc-demo/"
+    }
   }
 }
