@@ -1,0 +1,35 @@
+.toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  bottom: 0;
+
+  > a.animated {
+    /* animation-timeline: var(--timelineName); */
+    animation-name: highlight;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.trigger {
+  /* view-timeline-name: var(--timelineName); */
+}
+
+@keyframes highlight {
+  from,
+  to {
+    color: blue;
+  }
+  5%,
+  95% {
+    color: lightblue;
+    transform: translateX(10px);
+  }
+}
+
+body {
+  padding-left: 200px;
+}
