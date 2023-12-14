@@ -11,7 +11,7 @@ function addAnimation(id) {
     document.body.style = `timeline-scope: ${timelines.join(", ")}`
 
     tocLink.className = "animated"
-    tocLink.style.animationTimeline = timelineName;
+    tocLink.style.setProperty('--timelineName', timelineName);
     target.style.viewTimelineName = timelineName;
 }
 

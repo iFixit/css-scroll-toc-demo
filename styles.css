@@ -1,3 +1,9 @@
+.controls {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
 .toc {
   position: fixed;
   top: 0;
@@ -6,16 +12,43 @@
   flex-direction: column;
   overflow: scroll;
   bottom: 0;
+}
 
-  > a.animated {
-    /* animation-timeline: var(--timelineName); */
-    animation-name: highlight;
-    animation-timing-function: ease-in-out;
-  }
+body:has(.controls .bump:checked) .toc > a.animated {
+  animation-timeline: var(--timelineName);
+  animation-name: highlight;
+  animation-timing-function: ease-in-out;
+}
+
+body:has(.controls .smear:checked) .toc > a.animated::after {
+  animation-timing-function: ease-in-out;
+  animation-name: smear;
+  animation-timeline: var(--timelineName);
+  position: relative;
+  left: 0;
+  background-color: green;
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 0;
 }
 
 .trigger {
   /* view-timeline-name: var(--timelineName); */
+}
+
+@keyframes smear {
+  from {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+  }
+  to {
+    margin-left: 100%;
+    width: 0;
+  }
 }
 
 @keyframes highlight {
